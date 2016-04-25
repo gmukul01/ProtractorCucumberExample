@@ -1,0 +1,26 @@
+{
+  "name": "protractor-cucumber-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor ./lib/config/protractorconfig.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmukul01/ProtractorCucumberExample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmukul01/ProtractorCucumberExample/issues"
+  },
+  "homepage": "https://github.com/gmukul01/ProtractorCucumberExample#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "cucumber": "^0.10.2",
+    "protractor": "^3.2.2",
+    "protractor-cucumber-framework": "^0.5.0"
+  }
+}
