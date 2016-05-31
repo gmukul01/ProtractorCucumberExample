@@ -9,14 +9,18 @@ module.exports =function () {
     this.Given(/^I am on Protractor Demo page$/, function () {
         homepage.get();
     });
-    this.When(/^I add one and two$/, function () {
 
-        homepage.setfirst(1);
-        homepage.setsecond(2);
+    this.When(/^I add below numbers$/, function (table) {
+
+        table.hashes().forEach(function(row){
+            homepage.setfirst(row.first);
+            homepage.setsecond(row.second);
+        });
 
     });
+
     this.Then(/^I should get three$/, function (done) {
-        homepage.verifySum('3').then(done);
+        homepage.verifySum('5').then(done);
       });
 
     }
