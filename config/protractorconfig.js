@@ -8,13 +8,13 @@ exports.config = {
     multiCapabilities: [
         {
             browserName: 'firefox',
+        },
+        {
+            browserName: 'phantomjs',
+            'phantomjs.binary.path': require('phantomjs').path
         }],
-        // {
-        //     browserName: 'phantomjs',
-        //     'phantomjs.binary.path': require('phantomjs').path
-        // }],
 
-    directConnect: true,
+    // directConnect: true,
     chromeDriver: '../resources/chromedriver',
     specs: ['../resources/features/*.feature'], //directory to where my specs are defined
 
@@ -30,12 +30,12 @@ exports.config = {
     onPrepare: function() {
         browser.driver.manage().window().maximize(); //when protractor starts up I want it to maximise the browser
         // browser.ignoreSynchronization = true;
+        global.expect = require('chai').use(require('chai-as-promised')).expect;
     },
 
     cucumberOpts: {//cucumber comand line options
 
         require: ['../src/step_definition/*.js','./env.js'],
-        // tags: '@dev',
         format: 'pretty'
 
     }
