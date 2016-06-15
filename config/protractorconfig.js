@@ -1,6 +1,3 @@
-/**
- * Created by mukulb on 4/25/16.
- */
 exports.config = {
 
     baseUrl: 'http://localhost:5000', //base url of my application
@@ -10,16 +7,20 @@ exports.config = {
             browserName: 'firefox',
         },
         {
-            browserName: 'phantomjs',
-            'phantomjs.binary.path': require('phantomjs').path
-        }],
+            browserName: 'chrome',
+        },
+        // {
+        //     browserName: 'phantomjs',
+        //     'phantomjs.binary.path': require('phantomjs').path
+        // },
+      ],
 
     // directConnect: true,
     chromeDriver: '../resources/chromedriver',
     specs: ['../resources/features/*.feature'], //directory to where my specs are defined
 
-    // sauceUser: 'gmukul01',
-    // sauceKey: '057ab23c-e578-47f4-aed3-083a112dcd8a',
+    sauceUser: 'mukulb',
+    sauceKey: '6ea2bc7d-99a5-4400-b012-1be4d400bd5c',
 
 
     framework: 'custom',
@@ -34,10 +35,7 @@ exports.config = {
     },
 
     cucumberOpts: {//cucumber comand line options
-
         require: ['../src/step_definition/*.js','./env.js'],
         format: 'pretty'
-
     }
-
 };
